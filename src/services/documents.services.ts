@@ -7,6 +7,6 @@ export async function processDocument(file: Express.Multer.File | undefined) {
   const form = new FormData();
   form.append("file", file.buffer, file.originalname);
 
-  const response = await callPythonPost("/documents/parse", form, form.getHeaders());
+  const response = await callPythonPost("documents/parse", form, form.getHeaders());
   return response;
 }
